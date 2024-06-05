@@ -1,0 +1,89 @@
+<h1>Top Score</h1>
+    <table border="1">
+        <tr>
+            <th>Goals</th>
+            <th>Player ID</th>
+            <th>Player Name</th>
+            <th>Age</th>
+            <th>Position</th>
+            <th>Team ID</th>
+        </tr>
+        <tr>
+            <td>{{ top_score.goals }}</td>
+            <td>{{ top_score.player_id }}</td>
+            <td>{{ top_score.player_info.name }}</td>
+            <td>{{ top_score.player_info.age }}</td>
+            <td>{{ top_score.player_info.position }}</td>
+            <td>{{ top_score.player_info.team_id }}</td>
+        </tr>
+    </table> 
+
+    <h1>Rank Team</h1>
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Points</th>
+            <th>Rank</th>
+        </tr>
+        <tr>
+            <td>{{ rank_team.id }}</td>
+            <td>{{ rank_team.name }}</td>
+            <td>{{ rank_team.points }}</td>
+            <td>{{ rank_team.rank }}</td>
+        </tr>
+    </table>
+
+     
+
+    <h1>Match Schedule</h1>
+    <table border="1">
+        <tr>
+            <th>Match Date</th>
+            <th>Stadium</th>
+            <th>Home Team</th>
+            <th>Away Team</th>
+        </tr>
+        <tr>
+            <td>{{ match_schedule.match_date }}</td>
+            <td>{{ match_schedule.stadium.name }}</td>
+            <td>{{ match_schedule.team_home_info.name }}</td>
+            <td>{{ match_schedule.team_away_info.name }}</td>
+        </tr>
+    </table>
+
+    <h1>Stadium Info</h1>
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Address</th>
+            <th>Capacity</th>
+        </tr>
+        <tr>
+            <td>{{ stadium.id }}</td>
+            <td>{{ stadium.name }}</td>
+            <td>{{ stadium.address }}</td>
+            <td>{{ stadium.capacity }}</td>
+        </tr>
+    </table>
+
+    <h1>Rumors</h1>
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <th>Player ID</th>
+            <th>Source Club</th>
+            <th>Destination Club</th>
+            <th>Transfer Fee</th>
+            <th>Rumor Details</th>
+        </tr>
+        <tr>
+            <td>{{ rumor.id }}</td>
+            <td>{{ rumor.player_id }}</td>
+            <td>{{ rumor.source_club }}</td>
+            <td>{{ rumor.destination_club }}</td>
+            <td>{{ rumor.transfer_fee }}</td>
+            <td>{{ rumor.rumor_details }}</td>
+        </tr>
+    </table>

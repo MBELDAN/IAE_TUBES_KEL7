@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block title %}Transfer Rumors - My Site{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h2>Transfer Rumors</h2>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">Source Club</th>
+                <th scope="col">Destination Club</th>
+                <th scope="col">Transfer Fee</th>
+                <th scope="col">Rumor Details</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for rumor in rumors %}
+            <tr>
+                <td>{{ rumor.source_club }}</td>
+                <td>{{ rumor.destination_club }}</td>
+                <td>{{ rumor.transfer_fee }}</td>
+                <td>{{ rumor.rumor_details }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

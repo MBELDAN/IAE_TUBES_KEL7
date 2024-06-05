@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block title %}Players{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h2 class="display-4">Info Player</h2>
+    <hr class="my-4">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>nama</th>
+                <th>umur</th>
+                <th>posisi</th>
+                <th>team</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for player in player_info %}
+            <tr>
+                <td>{{ player.name }}</td>
+                <td>{{ player.age }}</td>
+                <td>{{ player.position }}</td>
+                <td>{{ player.team_id }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

@@ -1,0 +1,30 @@
+{
+    "clientName": "Thunder Client",
+    "environmentName": "sepakbola",
+    "environmentId": "5d4ea30c-23ae-4179-af17-e231811b4824",
+    "dateExported": "2024-06-03T11:05:21.374Z",
+    "version": "1.2",
+    "variables": [
+        {
+            "name": "baseurl_player_info",
+            "value": "http://127.0.0.1:5001"
+        },
+        {
+            "name": "baseurl_rank_team",
+            "value": "http://127.0.0.1:5002"
+        },
+        {
+            "name": "baseurl_top_score",
+            "value": "http://127.0.0.1:5003"
+        },
+        {
+            "name": "baseurl_schedule",
+            "value": "http://127.0.0.1:5004"
+        },
+        {
+            "name": "baseurl_rumor",
+            "value": "http://127.0.0.1:5005"
+        }
+    ],
+    "ref": "Z5jnRl9zVXm9KGGSUuWxbbBmhPPSQNpaV4mN1ISEdpTvX3wRQSmw9VcwK6Mjfvnl"
+}

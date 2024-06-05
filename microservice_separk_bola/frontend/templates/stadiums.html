@@ -1,0 +1,98 @@
+{% extends 'base.html' %}
+
+{% block title %}Stadiums - My Site{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h2>Stadiums</h2>
+
+    <h3>Add New Stadium</h3>
+    <form method="post">
+        <div class="form-group">
+            <label for="name">Stadium Name</label>
+            <input type="text" class="form-control" id="name" name="name" required>
+        </div>
+        <div class="form-group">
+            <label for="capacity">Capacity</label>
+            <input type="number" class="form-control" id="capacity" name="capacity" required>
+        </div>
+        <div class="form-group">
+            <label for="address">Address</label>
+            <input type="text" class="form-control" id="address" name="address" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Add Stadium</button>
+    </form>
+
+    <h3>Existing Stadiums</h3>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">Stadium Name</th>
+                <th scope="col">Address</th>
+                <th scope="col">Capacity</th>
+                <th scope="col">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for stadium in stadiums %}
+            <tr>
+                <td>{{ stadium.name }}</td>
+                <td>{{ stadium.address }}</td>
+                <td>{{ stadium.capacity }}</td>
+                <td>
+                    <form method="post" action="{{ url_for('delete_stadium', stadium_id=stadium.id) }}" style="display:inline;">
+                        <button type="submit" class="btn btn-danger">Delete</button>
+                    </form>
+                    <button class="btn btn-info" onclick="openUpdateModal({{ stadium.id }}, '{{ stadium.name }}', {{ stadium.capacity }}, '{{ stadium.address }}')">Update</button>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+<!-- Update Modal -->
+<div class="modal fade" id="updateModal" tabindex="-1" aria-labelledby="updateModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <form method="post" id="updateForm">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="updateModalLabel">Update Stadium</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label for="updateName">Stadium Name</label>
+                        <input type="text" class="form-control" id="updateName" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="updateCapacity">Capacity</label>
+                        <input type="number" class="form-control" id="updateCapacity" name="capacity" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="updateAddress">Address</label>
+                        <input type="text" class="form-control" id="updateAddress" name="address" required>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary">Save changes</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script>
+function openUpdateModal(id, name, capacity, address) {
+    document.getElementById('updateName').value = name;
+    document.getElementById('updateCapacity').value = capacity;
+    document.getElementById('updateAddress').value = address;
+    document.getElementById('updateForm').action = `/stadiums/update/${id}`;
+    $('#updateModal').modal('show');
+}
+</script>
+
+{% endblock %}

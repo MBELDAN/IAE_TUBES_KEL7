@@ -1,0 +1,342 @@
+{
+    "clientName": "Thunder Client",
+    "collectionName": "player_info",
+    "collectionId": "0cb6800b-5968-4c3e-a133-f530633a090b",
+    "dateExported": "2024-06-01T01:40:50.357Z",
+    "version": "1.2",
+    "folders": [
+        {
+            "_id": "2b4a15b2-f895-46e6-aed8-660418bd7c44",
+            "name": "team rank",
+            "containerId": "",
+            "created": "2024-06-01T00:26:06.485Z",
+            "sortNum": 10000
+        },
+        {
+            "_id": "fbea848b-c51c-4db2-b196-9890b55c9aa2",
+            "name": "player info",
+            "containerId": "",
+            "created": "2024-06-01T00:26:14.829Z",
+            "sortNum": 20000
+        }
+    ],
+    "requests": [
+        {
+            "_id": "9c731f36-ac7d-44a2-90d3-89e1c79bb45f",
+            "colId": "0cb6800b-5968-4c3e-a133-f530633a090b",
+            "containerId": "fbea848b-c51c-4db2-b196-9890b55c9aa2",
+            "name": "get player by id",
+            "url": "{{baseurl_player_info}}/players/1",
+            "method": "GET",
+            "sortNum": 10000,
+            "created": "2024-05-31T00:35:19.973Z",
+            "modified": "2024-05-31T00:35:31.212Z",
+            "headers": []
+        },
+        {
+            "_id": "84b75691-e3c5-46c6-9a15-1b87d30beaf6",
+            "colId": "0cb6800b-5968-4c3e-a133-f530633a090b",
+            "containerId": "fbea848b-c51c-4db2-b196-9890b55c9aa2",
+            "name": "get all players info",
+            "url": "{{baseurl_player_info}}/players",
+            "method": "GET",
+            "sortNum": 20000,
+            "created": "2024-05-31T00:36:07.694Z",
+            "modified": "2024-05-31T00:36:17.344Z",
+            "headers": []
+        },
+        {
+            "_id": "f1d99ab7-a5b5-4e27-97aa-1b186e25e541",
+            "colId": "0cb6800b-5968-4c3e-a133-f530633a090b",
+            "containerId": "2b4a15b2-f895-46e6-aed8-660418bd7c44",
+            "name": "get teams",
+            "url": "{{baseurl_rank_team}}/teams",
+            "method": "GET",
+            "sortNum": 30000,
+            "created": "2024-06-01T00:26:35.687Z",
+            "modified": "2024-06-01T00:27:15.623Z",
+            "headers": []
+        },
+        {
+            "_id": "090b3051-c959-432f-9047-a4d776552000",
+            "colId": "0cb6800b-5968-4c3e-a133-f530633a090b",
+            "containerId": "2b4a15b2-f895-46e6-aed8-660418bd7c44",
+            "name": "get teams sort desc",
+            "url": "{{baseurl_rank_team}}/teams?sort=desc",
+            "method": "GET",
+            "sortNum": 40000,
+            "created": "2024-06-01T00:30:07.806Z",
+            "modified": "2024-06-01T00:30:21.990Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "sort",
+                    "value": "desc",
+                    "isPath": false
+                }
+            ]
+        },
+        {
+            "_id": "d4c75ea9-f386-46b4-a39c-042f12c99ee2",
+            "colId": "0cb6800b-5968-4c3e-a133-f530633a090b",
+            "containerId": "2b4a15b2-f895-46e6-aed8-660418bd7c44",
+            "name": "get teams sort asc",
+            "url": "{{baseurl_rank_team}}/teams?sort=asc",
+            "method": "GET",
+            "sortNum": 50000,
+            "created": "2024-06-01T00:30:43.959Z",
+            "modified": "2024-06-01T00:30:57.577Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "sort",
+                    "value": "asc",
+                    "isPath": false
+                }
+            ]
+        },
+        {
+            "_id": "c584c6af-210f-4684-b107-cf4eefa28e9a",
+            "colId": "0cb6800b-5968-4c3e-a133-f530633a090b",
+            "containerId": "2b4a15b2-f895-46e6-aed8-660418bd7c44",
+            "name": "get team by id",
+            "url": "{{baseurl_rank_team}}/teams/1",
+            "method": "GET",
+            "sortNum": 60000,
+            "created": "2024-06-01T00:32:47.926Z",
+            "modified": "2024-06-01T00:33:10.194Z",
+            "headers": []
+        },
+        {
+            "_id": "a6812490-6fe0-418a-a0bd-4a7d166efe7e",
+            "colId": "0cb6800b-5968-4c3e-a133-f530633a090b",
+            "containerId": "2b4a15b2-f895-46e6-aed8-660418bd7c44",
+            "name": "get team by rank",
+            "url": "{{baseurl_rank_team}}/teams/rank/1",
+            "method": "GET",
+            "sortNum": 70000,
+            "created": "2024-06-01T00:37:25.403Z",
+            "modified": "2024-06-01T00:37:32.263Z",
+            "headers": []
+        },
+        {
+            "_id": "8f8453ef-042a-47c3-b1a1-83e6bf515856",
+            "colId": "0cb6800b-5968-4c3e-a133-f530633a090b",
+            "containerId": "2b4a15b2-f895-46e6-aed8-660418bd7c44",
+            "name": "get by point",
+            "url": "{{baseurl_rank_team}}/teams/points/45",
+            "method": "GET",
+            "sortNum": 80000,
+            "created": "2024-06-01T00:38:26.141Z",
+            "modified": "2024-06-01T00:38:32.570Z",
+            "headers": []
+        },
+        {
+            "_id": "4fe0ff9f-19a9-4145-a790-9f950d2eb5bd",
+            "colId": "0cb6800b-5968-4c3e-a133-f530633a090b",
+            "containerId": "2b4a15b2-f895-46e6-aed8-660418bd7c44",
+            "name": "get by point beetween",
+            "url": "{{baseurl_rank_team}}/teams/points?min=35&max=45",
+            "method": "GET",
+            "sortNum": 90000,
+            "created": "2024-06-01T00:38:53.716Z",
+            "modified": "2024-06-01T00:39:06.417Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "min",
+                    "value": "35",
+                    "isPath": false
+                },
+                {
+                    "name": "max",
+                    "value": "45",
+                    "isPath": false
+                }
+            ]
+        },
+        {
+            "_id": "55b1b789-ae11-408e-8d04-1544b74af251",
+            "colId": "0cb6800b-5968-4c3e-a133-f530633a090b",
+            "containerId": "fbea848b-c51c-4db2-b196-9890b55c9aa2",
+            "name": "get player by id with team",
+            "url": "{{baseurl_player_info}}/players/1?include_team=true",
+            "method": "GET",
+            "sortNum": 100000,
+            "created": "2024-06-01T01:22:17.132Z",
+            "modified": "2024-06-01T01:22:37.594Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "include_team",
+                    "value": "true",
+                    "isPath": false
+                }
+            ]
+        },
+        {
+            "_id": "0b5231ac-8eef-45f6-9b58-28cd018ea5ee",
+            "colId": "0cb6800b-5968-4c3e-a133-f530633a090b",
+            "containerId": "fbea848b-c51c-4db2-b196-9890b55c9aa2",
+            "name": "get all player with team",
+            "url": "{{baseurl_player_info}}/players?include_team=true",
+            "method": "GET",
+            "sortNum": 110000,
+            "created": "2024-06-01T01:23:01.659Z",
+            "modified": "2024-06-01T01:23:45.218Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "include_team",
+                    "value": "true",
+                    "isPath": false
+                }
+            ]
+        },
+        {
+            "_id": "f6202e04-b99b-43bf-a0b6-ef37ad5d840f",
+            "colId": "0cb6800b-5968-4c3e-a133-f530633a090b",
+            "containerId": "fbea848b-c51c-4db2-b196-9890b55c9aa2",
+            "name": "get player by potition",
+            "url": "{{baseurl_player_info}}/players?position=Forward&include_team=true",
+            "method": "GET",
+            "sortNum": 130000,
+            "created": "2024-06-01T01:26:47.111Z",
+            "modified": "2024-06-01T01:28:17.075Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "position",
+                    "value": "Forward",
+                    "isPath": false
+                },
+                {
+                    "name": "include_team",
+                    "value": "true",
+                    "isPath": false
+                }
+            ]
+        },
+        {
+            "_id": "91ba4400-d08e-4baf-8b53-118dd4746ade",
+            "colId": "0cb6800b-5968-4c3e-a133-f530633a090b",
+            "containerId": "fbea848b-c51c-4db2-b196-9890b55c9aa2",
+            "name": "get player by name",
+            "url": "{{baseurl_player_info}}/players?name=mes",
+            "method": "GET",
+            "sortNum": 140000,
+            "created": "2024-06-01T01:28:43.318Z",
+            "modified": "2024-06-01T01:28:52.530Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "name",
+                    "value": "mes",
+                    "isPath": false
+                }
+            ]
+        },
+        {
+            "_id": "2137acad-aea2-4522-b277-31f86e9f00cb",
+            "colId": "0cb6800b-5968-4c3e-a133-f530633a090b",
+            "containerId": "fbea848b-c51c-4db2-b196-9890b55c9aa2",
+            "name": "get by age",
+            "url": "{{baseurl_player_info}}/players?age=25",
+            "method": "GET",
+            "sortNum": 150000,
+            "created": "2024-06-01T01:29:04.299Z",
+            "modified": "2024-06-01T01:29:26.201Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "age",
+                    "value": "25",
+                    "isPath": false
+                }
+            ]
+        },
+        {
+            "_id": "c560aa1e-a781-4577-9a21-b35357e343df",
+            "colId": "0cb6800b-5968-4c3e-a133-f530633a090b",
+            "containerId": "fbea848b-c51c-4db2-b196-9890b55c9aa2",
+            "name": "combine",
+            "url": "{{baseurl_player_info}}/players?position=Forward&team_id=1&include_team=true",
+            "method": "GET",
+            "sortNum": 160000,
+            "created": "2024-06-01T01:29:48.252Z",
+            "modified": "2024-06-01T01:29:57.812Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "position",
+                    "value": "Forward",
+                    "isPath": false
+                },
+                {
+                    "name": "team_id",
+                    "value": "1",
+                    "isPath": false
+                },
+                {
+                    "name": "include_team",
+                    "value": "true",
+                    "isPath": false
+                }
+            ]
+        },
+        {
+            "_id": "4ecf721a-37d0-4443-b12d-2f911f020cab",
+            "colId": "0cb6800b-5968-4c3e-a133-f530633a090b",
+            "containerId": "2b4a15b2-f895-46e6-aed8-660418bd7c44",
+            "name": "by rank with team",
+            "url": "{{baseurl_rank_team}}/teams?rank=1&include_players=true",
+            "method": "GET",
+            "sortNum": 170000,
+            "created": "2024-06-01T01:38:17.321Z",
+            "modified": "2024-06-01T01:38:30.769Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "rank",
+                    "value": "1",
+                    "isPath": false
+                },
+                {
+                    "name": "include_players",
+                    "value": "true",
+                    "isPath": false
+                }
+            ]
+        },
+        {
+            "_id": "e0dfacf7-9ebe-41e6-b6e1-a8b20322b5fa",
+            "colId": "0cb6800b-5968-4c3e-a133-f530633a090b",
+            "containerId": "2b4a15b2-f895-46e6-aed8-660418bd7c44",
+            "name": "range point with player",
+            "url": "{{baseurl_rank_team}}/teams?min_points=38&max_points=45&include_players=true",
+            "method": "GET",
+            "sortNum": 180000,
+            "created": "2024-06-01T01:39:01.994Z",
+            "modified": "2024-06-01T01:39:50.765Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "min_points",
+                    "value": "38",
+                    "isPath": false
+                },
+                {
+                    "name": "max_points",
+                    "value": "45",
+                    "isPath": false
+                },
+                {
+                    "name": "include_players",
+                    "value": "true",
+                    "isPath": false
+                }
+            ]
+        }
+    ],
+    "ref": "BXP1uZstJqpKMzVO6KxkRI8kRmH8btvYU9AShsiER0ev8Ri1V_u62nhNroYa97S4CTvzlbb3ZFZiHTmvM1_JiA"
+}

@@ -1,0 +1,133 @@
+{% extends 'base.html' %}
+
+{% block title %}Match Schedules - My Site{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h2>Match Schedules</h2>
+
+    <h3>Add New Match Schedule</h3>
+    <form method="post">
+        <div class="form-group">
+            <label for="match_date">Match Date</label>
+            <input type="date" class="form-control" id="match_date" name="match_date" required>
+        </div>
+        <div class="form-group">
+            <label for="team_home_id">Home Team</label>
+            <select class="form-control" id="team_home_id" name="team_home_id" required>
+                {% for team in teams %}
+                <option value="{{ team.id }}">{{ team.name }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="team_away_id">Away Team</label>
+            <select class="form-control" id="team_away_id" name="team_away_id" required>
+                {% for team in teams %}
+                <option value="{{ team.id }}">{{ team.name }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="stadium_id">Stadium</label>
+            <select class="form-control" id="stadium_id" name="stadium_id" required>
+                {% for stadium in stadiums %}
+                <option value="{{ stadium.id }}">{{ stadium.name }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <button type="submit" class="btn btn-primary">Add Match</button>
+    </form>
+
+    <h3>Existing Match Schedules</h3>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">Match Date</th>
+                <th scope="col">Home Team</th>
+                <th scope="col">Away Team</th>
+                <th scope="col">Stadium</th>
+                <th scope="col">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for match in match_schedules %}
+            <tr>
+                <td>{{ match.match_date }}</td>
+                <td>{{ match.team_home_info.name }}</td>
+                <td>{{ match.team_away_info.name }}</td>
+                <td>{{ match.stadium.name }}</td>
+                <td>
+                    <form method="post" action="{{ url_for('delete_match_schedule', match_id=match.id) }}" style="display:inline;">
+                        <button type="submit" class="btn btn-danger">Delete</button>
+                    </form>
+                    <button class="btn btn-info" onclick="openUpdateModal({{ match.id }}, '{{ match.match_date }}', {{ match.team_home_id }}, {{ match.team_away_id }}, {{ match.stadium.id }})">Update</button>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+<!-- Update Modal -->
+<div class="modal fade" id="updateModal" tabindex="-1" aria-labelledby="updateModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <form method="post" id="updateForm">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="updateModalLabel">Update Match Schedule</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label for="updateMatchDate">Match Date</label>
+                        <input type="date" class="form-control" id="updateMatchDate" name="match_date" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="updateTeamHomeId">Home Team</label>
+                        <select class="form-control" id="updateTeamHomeId" name="team_home_id" required>
+                            {% for team in teams %}
+                            <option value="{{ team.id }}">{{ team.name }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="updateTeamAwayId">Away Team</label>
+                        <select class="form-control" id="updateTeamAwayId" name="team_away_id" required>
+                            {% for team in teams %}
+                            <option value="{{ team.id }}">{{ team.name }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="updateStadiumId">Stadium</label>
+                        <select class="form-control" id="updateStadiumId" name="stadium_id" required>
+                            {% for stadium in stadiums %}
+                            <option value="{{ stadium.id }}">{{ stadium.name }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary">Save changes</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script>
+function openUpdateModal(id, match_date, team_home_id, team_away_id, stadium_id) {
+    document.getElementById('updateMatchDate').value = match_date;
+    document.getElementById('updateTeamHomeId').value = team_home_id;
+    document.getElementById('updateTeamAwayId').value = team_away_id;
+    document.getElementById('updateStadiumId').value = stadium_id;
+    document.getElementById('updateForm').action = `/match_schedules/update/${id}`;
+    $('#updateModal').modal('show');
+}
+</script>
+
+{% endblock %}
